@@ -11,6 +11,8 @@ import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import AuthProvider from './Contexts/AuthProvider';
+import AddTutorials from './Pages/AddTutorials.jsx';
+import PrivateRoutes from './PrivateRoutes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,13 @@ const router = createBrowserRouter([
       {
         path: '/register',
         Component: Register
+      },
+      {
+        path: '/addtutorials',
+        element: <PrivateRoutes>
+            <AddTutorials></AddTutorials>
+        </PrivateRoutes>
+       
       }
     ]
   },
