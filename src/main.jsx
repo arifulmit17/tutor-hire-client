@@ -13,6 +13,7 @@ import Register from './Pages/Register.jsx';
 import AuthProvider from './Contexts/AuthProvider';
 import AddTutorials from './Pages/AddTutorials.jsx';
 import PrivateRoutes from './PrivateRoutes.jsx';
+import ErrorPage from './Pages/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+          path: '/*',
+          element: <ErrorPage></ErrorPage>
+  }
 ]);
 
 

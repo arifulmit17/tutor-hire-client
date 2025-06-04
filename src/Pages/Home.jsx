@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../Components/Banner';
 import { NavLink } from 'react-router';
+import Stats from '../Components/Stats';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
 
             <section>
                    <h1 className='font-bold text-5xl text-center my-10'>Stats section</h1>
+                   <Stats></Stats>
             </section>
             <section>
                 <h1 className='font-bold text-5xl text-center my-10'>Language Category</h1>
