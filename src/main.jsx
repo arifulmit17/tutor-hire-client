@@ -14,6 +14,7 @@ import AuthProvider from './Contexts/AuthProvider';
 import AddTutorials from './Pages/AddTutorials.jsx';
 import PrivateRoutes from './PrivateRoutes.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
+import MyTutorials from './Pages/MyTutorials.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,17 @@ const router = createBrowserRouter([
             <AddTutorials></AddTutorials>
         </PrivateRoutes>
        
+      },
+      {
+        path: '/mytutorials',
+        element: <PrivateRoutes>
+            <MyTutorials></MyTutorials>
+        </PrivateRoutes>,
+        loader: ()=> fetch('http://localhost:3000/tutorials')
+
+        
       }
+      
     ]
   },
   {
