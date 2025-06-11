@@ -6,6 +6,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { auth } from '../Firebase/Firebase.init';
 import { AuthContext } from '../Contexts/AuthContext';
+import axios from 'axios';
 
 const Register = () => {
     const navigate=useNavigate();
@@ -30,10 +31,14 @@ const Register = () => {
 
     const handleRegister=e=>{
         e.preventDefault();
-        const email=e.target.email.value;
-        const password=e.target.password.value;
-        const name=e.target.name.value;
-        const photo=e.target.photo.value;
+        const form = e.target
+        const formData = new FormData(form)
+
+         const userData = Object.fromEntries(
+        formData.entries()
+        )
+        const { email, password, name, photo }=userData
+        
         Swal.fire({
             title: "Registration successful",
             icon: "success",
@@ -43,6 +48,17 @@ const Register = () => {
         createUser(email,password)
          .then(result=>{
              console.log(result)
+             axios.post(`${import.meta.env.VITE_API_URL}/users`,userData).then(res=>{console.log(res.data)
+                if(res.data.insertedId){
+                                Swal.fire({
+                                        title: "Data added to users collection successfully!",
+                                        icon: "success",
+                                        draggable: true
+                        });
+                        }
+        }).catch(error=>{
+            console.log(error);
+        })
             updateUser({displayName: name, photoURL : photo}).then(()=>{
               setUser({...user,displayName: name, photoURL : photo})
             }).catch(error=>{

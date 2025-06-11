@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Suspense, use } from 'react';
 import Banner from '../Components/Banner';
 import { NavLink } from 'react-router';
 import Stats from '../Components/Stats';
+import axios from 'axios';
 
 const Home = () => {
+    const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())
+       
     return (
         <div>
             <section>
@@ -12,7 +15,10 @@ const Home = () => {
 
             <section>
                    <h1 className='font-bold text-5xl text-center my-10'>Stats section</h1>
-                   <Stats></Stats>
+                   <Suspense fallback={'Loading data ....'} >
+                        <Stats response={response}></Stats>
+                   </Suspense>
+                   
             </section>
             <section>
                 <h1 className='font-bold text-5xl text-center my-10'>Language Category</h1>
