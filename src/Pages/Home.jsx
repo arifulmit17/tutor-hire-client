@@ -2,7 +2,7 @@ import React, { Suspense, use } from 'react';
 import Banner from '../Components/Banner';
 import { NavLink } from 'react-router';
 import Stats from '../Components/Stats';
-import axios from 'axios';
+
 
 const Home = () => {
     const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())

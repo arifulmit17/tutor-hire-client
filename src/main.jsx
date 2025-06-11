@@ -15,6 +15,7 @@ import AddTutorials from './Pages/AddTutorials.jsx';
 import PrivateRoutes from './PrivateRoutes.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import MyTutorials from './Pages/MyTutorials.jsx';
+import FindTutors from './Pages/FindTutors.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true, Component: Home
+      },
+      {
+        path: '/findtutors',
+        Component: FindTutors,
+        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/tutorials`)
       },
       {
         path: '/login',
