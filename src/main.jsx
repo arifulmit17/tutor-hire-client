@@ -16,6 +16,7 @@ import PrivateRoutes from './PrivateRoutes.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import MyTutorials from './Pages/MyTutorials.jsx';
 import FindTutors from './Pages/FindTutors.jsx';
+import UpdateTutorials from './Pages/UpdateTutorials.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,13 @@ const router = createBrowserRouter([
         path: '/findtutors',
         Component: FindTutors,
         loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/tutorials`)
+      },
+      {
+        path: '/updatetutorials/:id',
+        element: <PrivateRoutes>
+          <UpdateTutorials></UpdateTutorials>
+        </PrivateRoutes>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/tutorials/${params.id}`)
       },
       {
         path: '/login',
