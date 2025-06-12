@@ -2,9 +2,13 @@ import React, { Suspense, use } from 'react';
 import Banner from '../Components/Banner';
 import { NavLink } from 'react-router';
 import Stats from '../Components/Stats';
-
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Home = () => {
+    const handleclick=(language)=>{
+        
+        console.log(language);
+    }
     const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())
        
     return (
@@ -22,6 +26,17 @@ const Home = () => {
             </section>
             <section>
                 <h1 className='font-bold text-5xl text-center my-10'>Language Category</h1>
+                <div className='grid grid-cols-3 gap-5'>
+                    <NavLink to={'/findtutors'}>
+<div onClick={()=>handleclick('english')} className='flex  border-2'>
+                    <img className='w-5' src="https://i.ibb.co/8D5NmZYp/images-10.jpg" alt="english" />
+                    <h1>English language</h1>
+                    <MdArrowForwardIos />
+                </div>
+                    </NavLink>
+                
+                </div>
+                
             </section>
             <section className='dark:text-white'>
 

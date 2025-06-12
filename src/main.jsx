@@ -54,11 +54,11 @@ const router = createBrowserRouter([
        
       },
       {
-        path: '/mytutorials',
+        path: '/mytutorials/:email',
         element: <PrivateRoutes>
             <MyTutorials></MyTutorials>
         </PrivateRoutes>,
-        loader: ()=> fetch('http://localhost:3000/tutorials')
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/mytutorials/${params.email}`)
 
         
       }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TutorCard = ({tutor}) => {
-    console.log(tutor);
     const {user,price, image, language, review, description}=tutor
     return (
         <div className="card card-side bg-base-100 shadow-sm">

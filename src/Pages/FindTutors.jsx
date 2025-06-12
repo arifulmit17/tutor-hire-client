@@ -4,7 +4,6 @@ import TutorCard from './TutorCard';
 
 const FindTutors = () => {
     const tutorData=useLoaderData();
-    console.log(tutorData);
     
     return (
         <div>

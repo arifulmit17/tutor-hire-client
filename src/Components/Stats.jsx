@@ -2,7 +2,7 @@ import React, { use } from 'react';
 
 const Stats = ({response}) => {
     const userData=use(response)
-     console.log(userData.length);
+
     return (
         <div className="stats shadow">
   <div className="stat">

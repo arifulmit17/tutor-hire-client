@@ -7,7 +7,6 @@ const MyTutorials = () => {
     const {user}=use(AuthContext)
     const initialtutorial=useLoaderData()
     const [mytutorial,setMytutorial]=useState(initialtutorial)
-    const tutoriallist=  mytutorial.filter(tutorial=>tutorial.email==user.email)
     return (
         <div className='bg-green-200 overflow-x-auto dark:bg-green-700 dark:text-white'>
             <table className="table">
@@ -24,7 +23,7 @@ const MyTutorials = () => {
     <tbody>
       {/* row 1 */}
       {
-        tutoriallist.map(tutorial=><MyTutorialsRow mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
+        initialtutorial.map(tutorial=><MyTutorialsRow mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
       }
       
       

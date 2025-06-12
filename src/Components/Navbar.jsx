@@ -29,8 +29,8 @@ const Navbar = () => {
       <li><Link to={'/'}>Home</Link></li>
       {user && <><li><NavLink to={'/findtutors'}>Find Tutors </NavLink></li></>}
       <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
-      <li><Link to={'/mytutorials'}>My Tutorials</Link></li>
-      {user && <><li><Link to={'/myttors'}>My Tutors </Link></li></>}
+      <li><Link to={`/mytutorials/${user?.email}`}>My Tutorials</Link></li>
+      {user && <><li><Link to={'/mytutors'}>My Tutors </Link></li></>}
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
