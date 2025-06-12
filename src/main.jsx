@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: '/findtutors',
         Component: FindTutors,
-        loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/tutorials`)
+        
       },
       {
         path: '/updatetutorials/:id',
