@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import TutorCard from './TutorCard';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const FindTutors = () => {
    
-    const [search, setSearch]=useState("")
+    const {search,setSearch}=use(AuthContext)
     const [tutorialdata,setTutorialdata]=useState([])
 
     useEffect(()=>{

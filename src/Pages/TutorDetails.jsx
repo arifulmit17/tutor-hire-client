@@ -1,8 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { useLoaderData } from 'react-router';
 
-const TutorCard = ({tutor}) => {
-    const {_id,user,price, image, language, review, description}=tutor
+const TutorDetails = () => {
+    const tutorData=useLoaderData()
+    const {_id,user,price, image, language, review, description}=tutorData
     return (
         <div className="card card-side bg-base-100 shadow-sm">
   <figure>
@@ -18,9 +19,9 @@ const TutorCard = ({tutor}) => {
     <p>Reviews: {review}</p>
 
     <div className="card-actions justify-end">
-        <NavLink to={`/tutordetails/${_id}`}>
-<button className="btn btn-primary">Details</button>
-        </NavLink>
+        
+<button className="btn btn-primary">Book</button>
+       
       
     </div>
   </div>
@@ -28,4 +29,4 @@ const TutorCard = ({tutor}) => {
     );
 };
 
-export default TutorCard;
+export default TutorDetails;

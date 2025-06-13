@@ -23,7 +23,7 @@ const MyTutorials = () => {
     <tbody>
       {/* row 1 */}
       {
-        initialtutorial.map(tutorial=><MyTutorialsRow mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
+        initialtutorial.map(tutorial=><MyTutorialsRow key={tutorial._id} mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
       }
       
       

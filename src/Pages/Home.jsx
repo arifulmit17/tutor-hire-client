@@ -3,11 +3,12 @@ import Banner from '../Components/Banner';
 import { NavLink } from 'react-router';
 import Stats from '../Components/Stats';
 import { MdArrowForwardIos } from "react-icons/md";
+import { AuthContext } from '../Contexts/AuthContext';
 
 const Home = () => {
+    const {search,setSearch}=use(AuthContext)
     const handleclick=(language)=>{
-        
-        console.log(language);
+        setSearch(language)
     }
     const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())
        
@@ -28,11 +29,39 @@ const Home = () => {
                 <h1 className='font-bold text-5xl text-center my-10'>Language Category</h1>
                 <div className='grid grid-cols-3 gap-5'>
                     <NavLink to={'/findtutors'}>
-<div onClick={()=>handleclick('english')} className='flex  border-2'>
-                    <img className='w-5' src="https://i.ibb.co/8D5NmZYp/images-10.jpg" alt="english" />
+                        <div onClick={()=>handleclick('english')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/8D5NmZYp/images-10.jpg" alt="english" />
                     <h1>English language</h1>
                     <MdArrowForwardIos />
-                </div>
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('german')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/QFcrs7KP/germany-640.png" alt="german" />
+                    <h1>German language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('hindi')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/sd2g0ZyR/india-640.png" alt="hindi" />
+                    <h1>Hindi language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('italian')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/Nkd8jbQ/italy-640.png" alt="italian" />
+                    <h1>Italian language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('greek')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/v4qSDwzf/greece-640.png" alt="greek" />
+                    <h1>Greek language</h1>
+                    <MdArrowForwardIos />
+                         </div>
                     </NavLink>
                 
                 </div>

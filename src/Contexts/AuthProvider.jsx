@@ -8,7 +8,7 @@ import { AuthContext } from './AuthContext';
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null);
     const [loader,setLoader]=useState(true);
-
+    const [search, setSearch]=useState("")
     
     
     const createUser=(email,password)=>{
@@ -48,7 +48,9 @@ const AuthProvider = ({children}) => {
        loader,
        LogOutUser,
        updateUser,
-       setUser
+       setUser,
+       search,
+       setSearch
     }
     return (
         <AuthContext value={userInfo}>
