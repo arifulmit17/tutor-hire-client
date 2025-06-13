@@ -1,12 +1,29 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
-import { useLoaderData } from 'react-router';
 import MyTutorialsRow from '../Components/MyTutorialsRow';
+import axios from 'axios';
 
 const MyTutorials = () => {
     const {user}=use(AuthContext)
-    const initialtutorial=useLoaderData()
-    const [mytutorial,setMytutorial]=useState(initialtutorial)
+    // const initialtutorial=useLoaderData()
+    const [tutorials, setTutorials] = useState([])
+    const [mytutorial,setMytutorial]=useState(tutorials)
+    
+  const token=localStorage.getItem('token');
+  useEffect(() => {
+    axios(`${import.meta.env.VITE_API_URL}/mytutorials/${user?.email}`,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+      .then(data => {
+        setTutorials(data?.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [user])
+
     return (
         <div className='bg-green-200 overflow-x-auto dark:bg-green-700 dark:text-white'>
             <table className="table">
@@ -23,7 +40,7 @@ const MyTutorials = () => {
     <tbody>
       {/* row 1 */}
       {
-        initialtutorial.map(tutorial=><MyTutorialsRow key={tutorial._id} mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
+        tutorials.map(tutorial=><MyTutorialsRow key={tutorial._id} mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
       }
       
       

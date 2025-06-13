@@ -34,9 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/updatetutorials/:id',
-        element: <PrivateRoutes>
-          <UpdateTutorials></UpdateTutorials>
-        </PrivateRoutes>,
+        Component: UpdateTutorials,
         loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/tutorials/${params.id}`)
       },
       {
@@ -44,7 +42,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
           <TutorDetails></TutorDetails>
         </PrivateRoutes>,
-        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/tutorials/${params.id}`)
+        
       },
       {
         path: '/login',
@@ -66,7 +64,7 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
             <MyTutorials></MyTutorials>
         </PrivateRoutes>,
-        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/mytutorials/${params.email}`)
+        
 
         
       }

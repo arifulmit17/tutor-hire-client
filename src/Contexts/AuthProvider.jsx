@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { auth } from './../Firebase/Firebase.init';
 import { AuthContext } from './AuthContext';
+import axios from 'axios';
 
 
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null);
     const [loader,setLoader]=useState(true);
     const [search, setSearch]=useState("")
-    
     
     const createUser=(email,password)=>{
         setLoader(true)
@@ -34,6 +34,11 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
+            if(currentUser?.email){
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,{email: currentUser?.email}).then(res=>
+                    localStorage.setItem('token',res.data.token))
+            }
+            
             setLoader(false)
         })
         return ()=>{

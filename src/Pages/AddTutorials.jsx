@@ -12,8 +12,12 @@ const AddTutorials = () => {
         const form=e.target;
         const formData = new FormData(form);
         const newTutorial = Object.fromEntries(formData.entries())
-
-        axios.post(`${import.meta.env.VITE_API_URL}/tutorials`,newTutorial).then(res=>{console.log(res.data);
+        const token=localStorage.getItem('token');
+        axios.post(`${import.meta.env.VITE_API_URL}/tutorials`,newTutorial,{
+            headers: {
+        Authorization: `Bearer ${token}`,
+      }
+        }).then(res=>{console.log(res.data);
             if(res.data.insertedId){
                 Swal.fire({
                         title: "Data added successfully!",
