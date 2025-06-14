@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { use, useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import React, {  use, useEffect, useState } from 'react';
+import {  useParams } from 'react-router';
+import { AuthContext } from '../Contexts/AuthContext';
 
 
 const TutorDetails = () => {
+    const {user}=use(AuthContext)
     const param =useParams()
     const [tutor,setTutor]=useState([])
     const token=localStorage.getItem('token');
@@ -20,7 +22,19 @@ const TutorDetails = () => {
         console.log(err)
       })
   }, [param.id])
-    const {user,price, image, language, review, description}=tutor
+    const {price,email, image, language, review, description}=tutor
+    const newTutor={
+        "tutorId": tutor._id,
+        "Image":image,
+        "Language":language,
+        "Price": price,
+        "TutorEmail": email,
+        "Email":user.email,
+    }
+    const handleClick=()=>{
+        axios.post(`${import.meta.env.VITE_API_URL}/tutor`,newTutor).then(data=>console.log(data.data)).catch(error=>console.log(error))
+    }
+
     return (
         <div className="card card-side bg-base-100 shadow-sm">
   <figure>
@@ -29,7 +43,7 @@ const TutorDetails = () => {
       alt="tutor" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">Name : {user}</h2>
+    <h2 className="card-title">Name : {tutor.user}</h2>
     <p>{description}</p>
     <p>Language: {language}</p>
     <p>Price: {price}</p>
@@ -37,7 +51,7 @@ const TutorDetails = () => {
 
     <div className="card-actions justify-end">
         
-<button className="btn btn-primary">Book</button>
+<button onClick={handleClick} className="btn btn-primary">Book</button>
        
       
     </div>

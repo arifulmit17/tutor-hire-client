@@ -18,6 +18,7 @@ import MyTutorials from './Pages/MyTutorials.jsx';
 import FindTutors from './Pages/FindTutors.jsx';
 import UpdateTutorials from './Pages/UpdateTutorials.jsx';
 import TutorDetails from './Pages/TutorDetails.jsx';
+import MyTutors from './Pages/MyTutors.jsx';
 
 const router = createBrowserRouter([
   {
@@ -64,10 +65,14 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
             <MyTutorials></MyTutorials>
         </PrivateRoutes>,
-        
-
-        
+      },
+      {
+        path: '/mytutors/:email',
+        element: <PrivateRoutes>
+            <MyTutors></MyTutors>
+        </PrivateRoutes>,
       }
+
       
     ]
   },
