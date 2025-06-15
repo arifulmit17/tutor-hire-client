@@ -41,7 +41,7 @@ const MyTutorialsRow = ({tutorial,mytutorial,setMytutorial}) => {
           <div className="flex items-center gap-3">
             <div className="avatar">
               <div className="mask mask-squircle h-12 w-12">
-                <img
+                <img className='w-10'
                   src={tutorial.image}
                   alt="Avatar Tailwind CSS Component" />
               </div>
@@ -57,7 +57,7 @@ const MyTutorialsRow = ({tutorial,mytutorial,setMytutorial}) => {
         <th>
             <button onClick={()=>handleDelete(tutorial._id)} className="btn text-white bg-green-600 btn-xs">Delete</button>
         <NavLink to={`/updatetutorials/${tutorial._id}`}>
-            <button className="btn text-white bg-green-600 btn-xs">Update</button>
+            <button className="btn btn-accent text-white btn-xs">Update</button>
         </NavLink>
             
           

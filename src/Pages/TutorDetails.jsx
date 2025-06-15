@@ -22,7 +22,7 @@ const TutorDetails = () => {
         console.log(err)
       })
   }, [param.id])
-    const {price,email, image, language, review, description}=tutor
+    const {price,email, image, language, reviews, description}=tutor
     const newTutor={
         "tutorId": tutor._id,
         "Image":image,
@@ -38,7 +38,7 @@ const TutorDetails = () => {
     return (
         <div className="card card-side bg-base-100 shadow-sm">
   <figure>
-    <img
+    <img className='size-20'
       src={image}
       alt="tutor" />
   </figure>
@@ -47,7 +47,7 @@ const TutorDetails = () => {
     <p>{description}</p>
     <p>Language: {language}</p>
     <p>Price: {price}</p>
-    <p>Reviews: {review}</p>
+    <p>Reviews: {reviews}</p>
 
     <div className="card-actions justify-end">
         

@@ -1,7 +1,42 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const MyTutorsRows = ({tutor}) => {
     console.log(tutor);
+    const [tutorial,setTutorial]=useState([])
+    let review=tutorial.reviews
+    if(review===null){
+        review=0
+    }
+    
+    const handleReview=(_id)=>{
+        review=parseInt(review)+1
+        if(review===null){
+        review=0
+        }
+        const newreviews={reviews: review}
+
+        axios(`${import.meta.env.VITE_API_URL}/tutorials/${_id}`).then(res=>setTutorial(res.data)).catch(error=>console.log(error))
+
+         fetch(`${import.meta.env.VITE_API_URL}/updatetutorialreview/${_id}`,{
+                    method: 'PUT',
+                    headers: {
+                        'content-type':'application/json'
+                    },
+                    body: JSON.stringify(newreviews)
+                }).then(res=>res.json()).then(data=>{
+                    if(data.modifiedCount){
+                        Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "reviews updated ,please reload",
+                        showConfirmButton: false,
+                        timer: 1500
+                        });
+                    }
+                })       
+    }
     return (
         <>
              <tr>
@@ -16,12 +51,11 @@ const MyTutorsRows = ({tutor}) => {
             </div>
           </div>
         </td>
-        <td>
-          {tutor.description}
-        </td>
         <td>{tutor.Language}</td>
         <td>{tutor.Price}</td>
-        <td>{tutor.reviews}</td>
+        <td>{tutor.TutorEmail}</td>
+        <td>{tutorial.reviews}</td>
+        <td><button onClick={()=>handleReview(tutor.tutorId)} className='btn btn-primary' >Review</button></td>
       </tr>
         </>
     );

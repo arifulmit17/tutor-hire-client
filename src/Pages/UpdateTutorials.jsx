@@ -12,7 +12,7 @@ const UpdateTutorials = () => {
         const form=e.target;
         const formData = new FormData(form);
         const newTutorial = Object.fromEntries(formData.entries())
-        console.log(newTutorial);
+        
 
         axios.put(`${import.meta.env.VITE_API_URL}/updatetutorial/${_id}`,newTutorial).then(res=>{
             if(res.data.modifiedCount){

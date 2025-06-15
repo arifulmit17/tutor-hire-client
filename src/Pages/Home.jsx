@@ -11,6 +11,7 @@ const Home = () => {
         setSearch(language)
     }
     const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())
+    const res=fetch(`${import.meta.env.VITE_API_URL}/tutorials`).then(res=>res.json())
        
     return (
         <div>
@@ -21,7 +22,7 @@ const Home = () => {
             <section>
                    <h1 className='font-bold text-5xl text-center my-10'>Stats section</h1>
                    <Suspense fallback={'Loading data ....'} >
-                        <Stats response={response}></Stats>
+                        <Stats response={response} res={res}></Stats>
                    </Suspense>
                    
             </section>
@@ -36,8 +37,29 @@ const Home = () => {
                          </div>
                     </NavLink>
                     <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('bangla')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.postimg.cc/YCmHzqgL/pngtree-bangladesh-round-flag-with-transparent-vector-png-image-10501632.png" alt="english" />
+                    <h1>Bangla language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('chienese')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.postimg.cc/SN44fpdg/round-flag-of-china-illustration-vector.jpg" alt="english" />
+                    <h1>Chienese language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('portuguese')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.postimg.cc/ZKJkyxYg/download.jpg" alt="english" />
+                    <h1>Portuguese language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('german')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://i.ibb.co/QFcrs7KP/germany-640.png" alt="german" />
+                    <img className='w-10' src="https://i.postimg.cc/zBtJtcBV/germany-640.png" alt="german" />
                     <h1>German language</h1>
                     <MdArrowForwardIos />
                          </div>
@@ -58,8 +80,15 @@ const Home = () => {
                     </NavLink>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('greek')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://i.ibb.co/v4qSDwzf/greece-640.png" alt="greek" />
+                    <img className='w-10' src="https://i.postimg.cc/sgMsxcTr/greece-640.png" alt="greek" />
                     <h1>Greek language</h1>
+                    <MdArrowForwardIos />
+                         </div>
+                    </NavLink>
+                    <NavLink to={'/findtutors'}>
+                        <div onClick={()=>handleclick('french')} className='flex h-12 items-center justify-around border-2'>
+                    <img className='w-10' src="https://i.ibb.co/jPkTk8R1/france-640.png" alt="french" />
+                    <h1>French language</h1>
                     <MdArrowForwardIos />
                          </div>
                     </NavLink>
@@ -76,13 +105,13 @@ const Home = () => {
                 </div>
                 <div className='w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
-                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for gardening enthusiasts for following benefits</p>
+                    <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for teaching enthusiasts for following benefits</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
-                      <li>1. Share tips, find local gardeners, ask plant care questions any time or on weekly discussions</li>
+                      <li>1. Share tutorials, find tutors, ask questions any time to a tutor</li>
 
-                      <li>2. Post or join gardening events held on a weekly basis</li>
+                      <li>2. Post or join tutorials on the site</li>
 
-                      <li>3. Connect over shared interests like composting, hydroponics, balcony gardens</li>
+                      <li>3. Connect over shared interests in languages</li>
                     </ol>
                     <NavLink to={'/register'}>
                      <button className='text-white lg:ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>

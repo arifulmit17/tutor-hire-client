@@ -1,8 +1,29 @@
 import React, { use } from 'react';
 
-const Stats = ({response}) => {
+const Stats = ({response,res}) => {
     const userData=use(response)
-
+    const tutorialData=use(res)
+    let languages=[]
+    {
+      tutorialData.map(tutor=>languages.push(tutor.language))
+    }
+    let langset=new Set(languages)
+    let reviewNum=0
+    {
+      tutorialData.map(tutor=>{if(tutor.reviews!==null){
+        let tutorev=parseInt(tutor.reviews)
+        if(!tutorev.isNaN){
+        console.log(tutorev);
+        reviewNum=tutorev+reviewNum
+        }
+        
+      }})
+    }
+    console.log(reviewNum);
+    let tutotnum=tutorialData.length
+   
+    
+    
     return (
         <div className="stats shadow">
   <div className="stat">
@@ -21,9 +42,8 @@ const Stats = ({response}) => {
         ></path>
       </svg>
     </div>
-    <div className="stat-title">Downloads</div>
-    <div className="stat-value">31K</div>
-    <div className="stat-desc">Jan 1st - Feb 1st</div>
+    <div className="stat-title">Tutors/Tutorials number</div>
+    <div className="stat-value">{tutotnum}</div>
   </div>
 
   <div className="stat">
@@ -42,9 +62,8 @@ const Stats = ({response}) => {
         ></path>
       </svg>
     </div>
-    <div className="stat-title">New Users</div>
-    <div className="stat-value">4,200</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
+    <div className="stat-title">Languages</div>
+    <div className="stat-value">{langset.size}</div>
   </div>
 
   <div className="stat">

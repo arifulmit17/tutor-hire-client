@@ -7,6 +7,7 @@ import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
 import Switcher from './switcher';
 
+
 import './Navbar.css'
 
 const Navbar = () => {
@@ -56,6 +57,7 @@ const Navbar = () => {
   <div className="navbar-end">
     
     <Switcher></Switcher>
+      <input type="checkbox" value="night" className="toggle theme-controller" />
 
     {user? <>
       

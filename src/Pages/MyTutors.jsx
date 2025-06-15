@@ -9,7 +9,11 @@ const MyTutors = () => {
     console.log(tutor);
      const token=localStorage.getItem('token');
     useEffect(() => {
-        axios(`${import.meta.env.VITE_API_URL}/mytutor/${user?.email}`)
+        axios(`${import.meta.env.VITE_API_URL}/mytutor/${user?.email}`,{
+          headers: {
+        Authorization: `Bearer ${token}`,
+      }
+        })
           .then(data => {
             setTutor(data?.data)
           })
@@ -17,16 +21,17 @@ const MyTutors = () => {
             console.log(err)
           })
       }, [user])
+    
     return (
-        <div className='bg-green-200 overflow-x-auto dark:bg-green-700 dark:text-white'>
+        <div className=' overflow-x-auto dark:text-white'>
             <table className="table">
     {/* head */}
     <thead>
       <tr className='dark:text-white'>
         <th>Image</th>
-        <th>description</th>
         <th>Language</th>
         <th>Price</th>
+        <th>Email</th>
         <th>Reviews</th>
       </tr>
     </thead>
