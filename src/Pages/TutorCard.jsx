@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 const TutorCard = ({tutor}) => {
     const {_id,user,price, image, language, reviews, description}=tutor
     return (
-        <div className="card card-side bg-base-100 shadow-sm">
+        <div className="card card-side flex flex-col lg:flex-row bg-base-100 shadow-sm">
   <figure>
     <img className='size-[200px]'
       src={image}

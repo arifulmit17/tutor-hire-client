@@ -28,29 +28,11 @@ const AddTutorials = () => {
         }).catch(error=>{
             console.log(error);
         })
-        // fetch('https://b11a10garden-community-server.vercel.app/gardens', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newGarden)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if(data.insertedId){
-        //             Swal.fire({
-        //                 title: "Data added successfully!",
-        //                 icon: "success",
-        //                 draggable: true
-        //               });
 
-        //             //   form.reset()
-        //         }
-        //     })
 
     }
     return (
-        <div className='bg-green-200 dark:bg-green-700 w-full'>
+        <div className=' w-full'>
             <form  onSubmit={handleSubmit} className='grid gap-6 w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 <input type="text" name='user' value={user.displayName} placeholder="User" className="input w-full" />
                 <input type="text" name='email' value={user.email} placeholder="Email" className="input w-full" />
@@ -59,7 +41,7 @@ const AddTutorials = () => {
                 <input type='number' name='price' placeholder="price" className="input w-full" />
                 <input type="text" name='description' placeholder="Description" className="input w-full" />
                 <input type="number" name='reviews' defaultValue={0} placeholder="reviews" className="input w-full" />
-                <input className='btn w-full bg-green-500' value={'submit'} type='submit'/>
+                <input className='btn w-full btn-accent' value={'submit'} type='submit'/>
             </form>
             
 

@@ -25,7 +25,7 @@ const Stats = ({response,res}) => {
     
     
     return (
-        <div className="stats shadow">
+        <div className="stats shadow text-center">
   <div className="stat">
     <div className="stat-figure text-secondary">
       <svg

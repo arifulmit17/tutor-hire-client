@@ -21,14 +21,17 @@ const Home = () => {
 
             <section>
                    <h1 className='font-bold text-5xl text-center my-10'>Stats section</h1>
-                   <Suspense fallback={'Loading data ....'} >
+                   <div className='flex items-center justify-center'>
+                    <Suspense fallback={'Loading data ....'} >
                         <Stats response={response} res={res}></Stats>
                    </Suspense>
+                   </div>
+                   
                    
             </section>
             <section>
                 <h1 className='font-bold text-5xl text-center my-10'>Language Category</h1>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('english')} className='flex h-12 items-center justify-around border-2'>
                     <img className='w-10' src="https://i.ibb.co/8D5NmZYp/images-10.jpg" alt="english" />
@@ -101,7 +104,7 @@ const Home = () => {
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12 '>
-                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.ibb.co/JXrFNDY/member.png" alt="" />
+                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/zGLdcxJV/member.png" alt="" />
                 </div>
                 <div className='w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
@@ -114,7 +117,7 @@ const Home = () => {
                       <li>3. Connect over shared interests in languages</li>
                     </ol>
                     <NavLink to={'/register'}>
-                     <button className='text-white lg:ml-40 rounded-2xl btn bg-green-500 btn-wide'>Register Now</button>
+                     <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-accent btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
             </div>
@@ -134,8 +137,8 @@ const Home = () => {
 </div>
 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
-  <div className="collapse-title font-semibold">How do I update my tips information?</div>
-  <div className="collapse-content text-sm">Go to mytips section and browse to the tip you want to update, click update button, then an update info page will appear and you can update your information.</div>
+  <div className="collapse-title font-semibold">How do I give my reviews?</div>
+  <div className="collapse-content text-sm">Go to mytutors section and click review button, then review will update, if any problem press review another time.</div>
 </div>
             </section>
             

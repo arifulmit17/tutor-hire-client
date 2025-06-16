@@ -36,7 +36,7 @@ const TutorDetails = () => {
     }
 
     return (
-        <div className="card card-side bg-base-100 shadow-sm">
+        <div className="card card-side lg:flex-row flex-col bg-base-100 shadow-sm">
   <figure>
     <img className='size-20'
       src={image}

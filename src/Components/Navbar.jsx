@@ -35,7 +35,7 @@ const Navbar = () => {
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
-        <div className="navbar bg-blue-300 dark:text-white dark:bg-blue-900 shadow-sm">
+        <div className="navbar bg-blue-500 dark:text-white  shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,7 +47,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl"> <span className='text-blue-800 dark:text-blue-300'>Tutor</span>Hire</a>
+    <a className="btn btn-ghost text-xl"> <span className='text-yellow-500 '>Tutor</span>Hire</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -56,8 +56,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     
-    <Switcher></Switcher>
-      <input type="checkbox" value="night" className="toggle theme-controller" />
+      <input type="checkbox" value="night" className="mx-5 toggle theme-controller" />
 
     {user? <>
       

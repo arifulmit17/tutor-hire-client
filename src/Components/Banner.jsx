@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='flex'>
-            <div className='flex-1 flex flex-col justify-center items-start'>
+        <div className='flex flex-col lg:flex-row'>
+            <div className='flex-1 flex flex-col justify-center items-center lg:items-start'>
                 <h1 className='font-bold text-7xl'>Hire tutor now</h1>
                 <button className='btn btn-accent'>Hire now</button>
             </div>

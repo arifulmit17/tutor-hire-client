@@ -25,7 +25,7 @@ const MyTutorials = () => {
   }, [user])
 
     return (
-        <div className='bg-green-200 overflow-x-auto dark:bg-green-700 dark:text-white'>
+        <div className=' overflow-x-auto dark:text-white'>
             <table className="table">
     {/* head */}
     <thead>

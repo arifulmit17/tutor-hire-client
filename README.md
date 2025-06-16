@@ -11,3 +11,5 @@ Features:
 6.Deleting your unwanted tutorials. 
 
 Project description:Our site focuses on a platform for teaching enthusiasts and students for many benefits
+
+npm packages: sweetalert2, axios, jwt,firebase,mongodb etc.
