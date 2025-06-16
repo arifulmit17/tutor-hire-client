@@ -13,9 +13,7 @@ import './Navbar.css'
 const Navbar = () => {
     const {user, LogOutUser}=use(AuthContext);
 
-  const handleclick=()=>{
-    document.getElementById('logout').classList.remove('hidden')
-  }
+  
   
   const handleLogout=()=>{
       LogOutUser().then(()=>{
@@ -60,9 +58,9 @@ const Navbar = () => {
 
     {user? <>
       
-      <div className="w-10">
+      <div className="w-10 mx-5">
       
-          <img onClick={handleclick} className='rounded-full myDIV'
+          <img className='rounded-full myDIV'
             alt="Tailwind CSS Navbar component"
             
             src={`${user? user.photoURL: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}`} />
@@ -70,7 +68,7 @@ const Navbar = () => {
         </div>
         
         </div>
-      <a onClick={handleLogout} id='logout' className='btn hidden bg-white'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='btn btn-accent'>Log out</a>
     </> : <NavLink className='btn bg-white'  to={'/login'}>Login</NavLink>}
   </div>
 </div>

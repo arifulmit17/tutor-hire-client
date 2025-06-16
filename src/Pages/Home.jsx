@@ -34,7 +34,7 @@ const Home = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('english')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://i.ibb.co/8D5NmZYp/images-10.jpg" alt="english" />
+                    <img className='w-10' src="https://i.postimg.cc/9XL9B3nd/images-10.jpg" alt="english" />
                     <h1>English language</h1>
                     <MdArrowForwardIos />
                          </div>
@@ -69,14 +69,14 @@ const Home = () => {
                     </NavLink>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('hindi')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://i.ibb.co/sd2g0ZyR/india-640.png" alt="hindi" />
+                    <img className='w-10' src="https://i.postimg.cc/c1vd0TK7/india-640.png" alt="hindi" />
                     <h1>Hindi language</h1>
                     <MdArrowForwardIos />
                          </div>
                     </NavLink>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('italian')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://i.ibb.co/Nkd8jbQ/italy-640.png" alt="italian" />
+                    <img className='w-10' src="https://i.postimg.cc/R0xWnytz/italy-640.png" alt="italian" />
                     <h1>Italian language</h1>
                     <MdArrowForwardIos />
                          </div>
