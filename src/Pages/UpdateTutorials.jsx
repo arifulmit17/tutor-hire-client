@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdateTutorials = () => {
-    const {_id,price, image, language, review, description}=useLoaderData()
+    const {_id,price, image, language, description}=useLoaderData()
     const {user}=use(AuthContext)
     const handleUpdate=(e)=>{
         e.preventDefault()
