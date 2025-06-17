@@ -30,7 +30,7 @@ const UpdateTutorials = () => {
         })
     }
     return (
-        <div className='bg-green-200 dark:bg-green-700 w-full'>
+        <div className=' w-full'>
             <form  onSubmit={handleUpdate} className='grid gap-6 w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 <input type="text" name='user'  value={user.displayName} placeholder="User" className="input w-full" />
                 <input type="text" name='email' value={user.email} placeholder="Email" className="input w-full" />
@@ -39,7 +39,7 @@ const UpdateTutorials = () => {
                 <input type='number' name='price' defaultValue={price} placeholder="price" className="input w-full" />
                 <input type="text" name='description' defaultValue={description} placeholder="Description" className="input w-full" />
                 <input type="number" name='reviews' value={review} placeholder="reviews" className="input w-full" />
-                <input className='btn w-full md:ml-40 lg:ml-80 bg-green-500' value={'Update'} type='submit'/>
+                <input className='btn w-full btn-accent' value={'Update'} type='submit'/>
             </form>
             
 

@@ -1,5 +1,4 @@
 import React, { use, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
 import TutorCard from './TutorCard';
 import { AuthContext } from '../Contexts/AuthContext';
 

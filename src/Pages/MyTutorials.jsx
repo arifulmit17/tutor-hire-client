@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const MyTutorials = () => {
     const {user}=use(AuthContext)
-    // const initialtutorial=useLoaderData()
     const [tutorials, setTutorials] = useState([])
     const [mytutorial,setMytutorial]=useState(tutorials)
     

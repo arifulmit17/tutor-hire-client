@@ -11,16 +11,13 @@ const Stats = ({response,res}) => {
     let reviewNum=0
     {
       tutorialData.map(tutor=>{if(tutor.reviews!==null){
-        console.log(tutor.reviews);
         let tutorev=parseInt(tutor.reviews)
         if(!tutorev.isNaN){
-        console.log(tutorev);
         reviewNum=tutorev+reviewNum
         }
         
       }})
     }
-    console.log(reviewNum);
     let tutotnum=tutorialData.length
    
     
