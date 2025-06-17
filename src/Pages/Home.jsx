@@ -128,12 +128,12 @@ const Home = () => {
                 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
   <div className="collapse-title  font-semibold">How do I get into the community?</div>
-  <div className="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+  <div className="collapse-content text-sm">Click the "Register" button in the navbar and follow the registration process.</div>
 </div>
 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
   <div className="collapse-title font-semibold">I cannot find the logout button , where is it?</div>
-  <div className="collapse-content text-sm">Click on your image at the top right corner and the logout button will appear, then click on logout button</div>
+  <div className="collapse-content text-sm">Check on the top right corner, then click on logout button</div>
 </div>
 <div className="collapse dark:text-green-800 collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" />
