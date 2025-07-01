@@ -33,7 +33,7 @@ const Navbar = () => {
       <li><Link to={'/register'}>Register</Link></li>
     </>
     return (
-        <div className="navbar bg-blue-500 dark:text-white  shadow-sm">
+        <div className="navbar sticky top-0 z-[100] bg-blue-500 dark:text-white ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +45,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl"> <span className='text-yellow-500 '>Tutor</span>Hire</a>
+    <a className="btn btn-ghost ml-7 text-xl"> <span className='text-yellow-500 '>Tutor</span>Hire</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -68,8 +68,8 @@ const Navbar = () => {
         </div>
         
         </div>
-      <a onClick={handleLogout} id='logout' className='btn btn-accent'>Log out</a>
-    </> : <NavLink className='btn bg-white'  to={'/login'}>Login</NavLink>}
+      <a onClick={handleLogout} id='logout' className='btn btn-accent mr-10'>Log out</a>
+    </> : <NavLink className='btn btn-primary mr-10'  to={'/login'}>Login</NavLink>}
   </div>
 </div>
     );

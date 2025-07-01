@@ -15,7 +15,7 @@ const Home = () => {
        
     return (
         <div>
-            <section>
+            <section className='w-full'>
                 <Banner></Banner>
             </section>
 
@@ -117,7 +117,7 @@ const Home = () => {
                       <li>3. Connect over shared interests in languages</li>
                     </ol>
                     <NavLink to={'/register'}>
-                     <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-accent btn-wide'>Register Now</button>
+                     <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-primary btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
             </div>

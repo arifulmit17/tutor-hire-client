@@ -2,3 +2,10 @@
 @plugin "daisyui" {
    themes: light --default ,cupcake, dark --prefersdark,night;
  }
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #38ccf5;
+  --color-secondary: teal;
+}
