@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
         
         </div>
-      <a onClick={handleLogout} id='logout' className='btn btn-accent mr-10'>Log out</a>
+      <a onClick={handleLogout} id='logout' className='btn btn-primary mr-10'>Log out</a>
     </> : <NavLink className='btn btn-primary mr-10'  to={'/login'}>Login</NavLink>}
   </div>
 </div>

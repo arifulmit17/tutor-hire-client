@@ -38,7 +38,7 @@ const UpdateTutorials = () => {
                 <input type="text" name='language' defaultValue={language} placeholder="Language" className="input w-full" />
                 <input type='number' name='price' defaultValue={price} placeholder="price" className="input w-full" />
                 <input type="text" name='description' defaultValue={description} placeholder="Description" className="input w-full" />
-                <input className='btn w-full btn-accent md:ml-40 lg:ml-80' value={'Update'} type='submit'/>
+                <input className='btn w-full btn-primary md:ml-40 lg:ml-80' value={'Update'} type='submit'/>
             </form>
             
 

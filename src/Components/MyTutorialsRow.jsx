@@ -55,9 +55,9 @@ const MyTutorialsRow = ({tutorial,mytutorial,setMytutorial}) => {
         <td>{tutorial.price}</td>
         <td>{tutorial.reviews}</td>
         <th>
-            <button onClick={()=>handleDelete(tutorial._id)} className="btn text-white btn-accent btn-xs">Delete</button>
+            <button onClick={()=>handleDelete(tutorial._id)} className="btn text-white btn-primary btn-xs">Delete</button>
         <NavLink to={`/updatetutorials/${tutorial._id}`}>
-            <button className="btn ml-5 btn-accent text-white btn-xs">Update</button>
+            <button className="btn ml-5 btn-primary text-white btn-xs">Update</button>
         </NavLink>
             
           

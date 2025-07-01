@@ -1,19 +1,30 @@
 import React, { use, useEffect, useState } from 'react';
 import TutorCard from './TutorCard';
 import { AuthContext } from '../Contexts/AuthContext';
+import axios from 'axios';
 
 const FindTutors = () => {
    
     const {search,setSearch}=use(AuthContext)
     const [tutorialdata,setTutorialdata]=useState([])
+    const [order, setOrder] = useState("asc");
+    // useEffect(()=>{
+    //     fetch(`${import.meta.env.VITE_API_URL}/tutorials?searchParams=${search}`).then(res=>res.json()).then(data=>
+    //         setTutorialdata(data)
+    //     )
+    // },[search])
 
-    useEffect(()=>{
-        fetch(`${import.meta.env.VITE_API_URL}/tutorials?searchParams=${search}`).then(res=>res.json()).then(data=>
-            setTutorialdata(data)
-        )
-    },[search])
-
-    
+  //    useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_API_URL}/tutorials?sortBy=price&order=${order}`)
+  //     .then((res) => setTutorialdata(res.data))
+  // }, [order]);
+     useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/tutorials?order=${order}&search=${search}`)
+      .then((res) => setTutorialdata(res.data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, [order,search]);
     
     return (
         <div>
@@ -32,11 +43,19 @@ const FindTutors = () => {
     </g>
   </svg>
   <input onChange={(e)=>setSearch(e.target.value)} type="search" required placeholder="Search" />
+  
 </label>
+<button className='ml-2 btn btn-primary'>Search</button>
+            </div>
+            <div>
+              <select onChange={(e) => setOrder(e.target.value)} value={order}>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+            </select>
             </div>
 
 {
-            tutorialdata.map(tutor => <TutorCard tutor={tutor}></TutorCard>)
+            tutorialdata.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
         }
         </div>
         
