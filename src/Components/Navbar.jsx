@@ -26,7 +26,7 @@ const Navbar = () => {
     }
     const links=<>
       <li><Link to={'/'}>Home</Link></li>
-      <li><NavLink to={'/findtutors'}>Find Tutors </NavLink></li>
+      <li><NavLink to={'/findtutors'}>All Tutors and Tutorials</NavLink></li>
       <li><Link to={'/addtutorials'}>Add Tutorials</Link></li>
       {user && <><li><Link to={`/mytutorials/${user?.email}`}>My Tutorials</Link></li></>}
       {user && <><li><Link to={`/mytutors/${user?.email}`}>My Tutors </Link></li></>}
@@ -54,7 +54,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
     
-      <input type="checkbox" value="night" className="mx-5 toggle theme-controller" />
+      <input type="checkbox" value="night" className="mx-1 lg:mx-5 toggle theme-controller" />
 
     {user? <>
       

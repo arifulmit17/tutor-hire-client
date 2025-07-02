@@ -103,10 +103,10 @@ const Home = () => {
 
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
-                <div className='w-5/12 '>
+                <div className='w-5/12  '>
                     <img className='md:w-[300px] ml-30 rounded-2xl' src="https://i.postimg.cc/zGLdcxJV/member.png" alt="" />
                 </div>
-                <div className='w-7/12 mx-5 mb-5'>
+                <div className='w-full lg:w-7/12 mx-5 mb-5'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
                     <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for teaching enthusiasts for following benefits</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
@@ -121,6 +121,21 @@ const Home = () => {
                      </NavLink>
                 </div>
             </div>
+            </section>
+
+            <section>
+                <h1 className='font-bold text-5xl text-center my-10'>Promotional Offer</h1>
+                <div className='flex flex-col md:flex-row lg:flex-row'>
+                    <div className='flex-1'>
+                        <img className='h-[300px] w-full' src="https://i.postimg.cc/65wNBq9d/pngtree-50-off-blue-text-with-white-circle-background-png-image-6323823.png" alt="" />
+                    </div>
+                    <div className='flex-1 h-[300px] flex flex-col items-center justify-center bg-primary'>
+                        <h1 className='text-4xl'>
+                            Have 50% off this july
+                        </h1>
+                        <h1 className='text-3xl'>Register Now</h1>
+                    </div>
+                </div>
             </section>
 
             <section className='dark:text-white '>

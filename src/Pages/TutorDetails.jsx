@@ -36,18 +36,18 @@ const TutorDetails = () => {
     }
 
     return (
-        <div className="card card-side lg:flex-row flex-col bg-base-100 shadow-sm">
+        <div className="card w-1/2 mx-auto card-side lg:flex-row flex-col my-5 bg-secondary shadow-sm">
   <figure>
-    <img className='size-20'
+    <img className='size-50 rounded-2xl'
       src={image}
       alt="tutor" />
   </figure>
   <div className="card-body">
     <h2 className="card-title">Name : {tutor.user}</h2>
-    <p>{description}</p>
-    <p>Language: {language}</p>
-    <p>Price: {price}</p>
-    <p>Reviews: {reviews}</p>
+    <p><span className='font-bold'>Description:</span> {description}</p>
+    <p><span className='font-bold'>Language:</span> {language}</p>
+    <p><span className='font-bold'>Price:</span>  {price}</p>
+    <p><span className='font-bold'>Reviews:</span> {reviews}</p>
 
     <div className="card-actions justify-end">
         

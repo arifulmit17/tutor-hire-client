@@ -2,6 +2,7 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import './Banner.css'
+import { Link } from 'react-router';
 const Banner = () => {
     return (
         // <div className='flex flex-col lg:flex-row'>
@@ -17,23 +18,30 @@ const Banner = () => {
         <Carousel showThumbs={false} infiniteLoop autoPlay>
       <div>
         <img className='h-[400px]' src="https://i.postimg.cc/gjSQz3bg/home-tutor-Singapore.jpg" alt="Slide 1" />
-        <div className="custom-text-overlay flex flex-col items-start relative">
-          <h2 className="text-white text-4xl font-bold">Hire tutor now</h2>
+        <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
+          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+          <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
+          </Link>
+          
         </div>
       </div>
       <div >
         <img className='h-[400px]' src="https://i.postimg.cc/1z9PyBp0/AP-English-Tutor-1-1.jpg" alt="Slide 2" />
-        <div className="custom-text-overlay flex flex-col items-start relative">
-          <h2 className="text-white text-4xl font-bold">Hire tutor now</h2>
+        <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
+          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+          <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
+          </Link>
         </div>
       </div>
       <div>
-        <img className='h-[400px]' src="https://i.postimg.cc/1z9PyBp0/AP-English-Tutor-1-1.jpg" alt="Slide 3" />
-        <div className="custom-text-overlay flex flex-col items-start relative">
-          <h2 className="text-white text-4xl font-bold">Hire tutor now</h2>
+        <img className='h-[400px]' src="https://i.postimg.cc/FFgZ5BfP/istockphoto-1409994740-612x612.jpg" alt="Slide 3" />
+        <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
+          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+          <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
+          </Link>
         </div>
       </div>
     </Carousel>
