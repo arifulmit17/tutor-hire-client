@@ -9,5 +9,10 @@
   --color-primary: #38ccf5;
   --color-secondary: #d5e8f0;
 }
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: #3adede;
+  --color-secondary: #d5e8f0;
+}
 
  

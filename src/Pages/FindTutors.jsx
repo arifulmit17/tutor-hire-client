@@ -28,8 +28,8 @@ const FindTutors = () => {
     
     return (
         <div>
-            <div>
-                <label className="input">
+            <div className='my-5 flex justify-center'>
+                <label className="input ">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
       strokeLinejoin="round"
@@ -42,15 +42,18 @@ const FindTutors = () => {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input onChange={(e)=>setSearch(e.target.value)} type="search" required placeholder="Search" />
+  <input  onChange={(e)=>setSearch(e.target.value)} type="search" required placeholder="Search" />
   
 </label>
 <button className='ml-2 btn btn-primary'>Search</button>
             </div>
-            <div>
-              <select onChange={(e) => setOrder(e.target.value)} value={order}>
+            <div className='my-5 flex justify-center'>
+              
+            <select onChange={(e) => setOrder(e.target.value)} value={order} className="select">
+                <option disabled={true}>Pick a price</option>
                 <option value="asc">Price: Low to High</option>
                 <option value="desc">Price: High to Low</option>
+  
             </select>
             </div>
 

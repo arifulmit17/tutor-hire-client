@@ -41,7 +41,7 @@ const AddTutorials = () => {
                 <input type='number' name='price' placeholder="price" className="input w-full" />
                 <input type="text" name='description' placeholder="Description" className="input w-full" />
                 <input type="number" name='reviews' value={0} placeholder="reviews" className="input w-full" />
-                <input className='btn w-full btn-accent' value={'submit'} type='submit'/>
+                <input className='btn w-full btn-primary' value={'submit'} type='submit'/>
             </form>
             
 
