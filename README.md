@@ -7,6 +7,7 @@ Guidance: Browse to the live site link and follow the f.a.q section in home page
 
 Project description:Our site focuses on a platform for teaching enthusiasts and students for many benefits
 
+Technologies used: React.js, React-router, Express.js, Tailwind Css, JWT, mongoDB, Firebase ,Axios, Daisy-UI
 
 Features:
 <ul>
