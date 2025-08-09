@@ -1,17 +1,41 @@
-import React, { Suspense, use } from 'react';
+import React, { Suspense, use, useEffect, useState } from 'react';
 import Banner from '../Components/Banner';
-import { NavLink } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 import Stats from '../Components/Stats';
 import { MdArrowForwardIos } from "react-icons/md";
 import { AuthContext } from '../Contexts/AuthContext';
+import TutorCard from './TutorCard';
+import axios from 'axios';
+import Featured_tutorCard from './Featured_tutorCard';
 
 const Home = () => {
     const {search,setSearch}=use(AuthContext)
+    const [tutors,setTutorial]=useState([])
+    const [loading, setLoading] = useState(true);
+    
     const handleclick=(language)=>{
         setSearch(language)
     }
     const response=fetch(`${import.meta.env.VITE_API_URL}/users`).then(res=>res.json())
     const res=fetch(`${import.meta.env.VITE_API_URL}/tutorials`).then(res=>res.json())
+    
+    
+     useEffect(() => {
+      setLoading(true);
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/tutorials`)
+      .then((res) => {setTutorial(res.data)
+        setLoading(false);
+      }
+    )
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+//     fetch(`${import.meta.env.VITE_API_URL}/tutorials`)
+//   .then(res2 => res2.json())
+//   .then(data => {
+//     setTutorial(data); // <-- Your actual data
+//   })
+//   .catch(err => console.error(err));
        
     return (
         <div>
@@ -98,6 +122,14 @@ const Home = () => {
                 
                 </div>
                 
+            </section>
+            <section className='w-11/12 mx-auto'>
+                <h1 className='font-bold text-5xl text-center my-10'>Featured Tutorials</h1>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+                    {
+                        tutors.slice(0, 8).map(tutor=>(<Featured_tutorCard key={tutor._id} tutor={tutor}></Featured_tutorCard>))
+                    }
+                </div>
             </section>
             <section className='dark:text-white'>
 
