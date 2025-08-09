@@ -5,11 +5,13 @@ import axios from 'axios';
 
 const MyTutorials = () => {
     const {user}=use(AuthContext)
+    const[loading,setLoading]=useState(true)
     const [tutorials, setTutorials] = useState([])
     const [mytutorial,setMytutorial]=useState(tutorials)
     
   const token=localStorage.getItem('token');
   useEffect(() => {
+    setLoading(true);
     axios(`${import.meta.env.VITE_API_URL}/mytutorials/${user?.email}`,{
       headers: {
         Authorization: `Bearer ${token}`,
@@ -17,6 +19,8 @@ const MyTutorials = () => {
     })
       .then(data => {
         setTutorials(data?.data)
+        setLoading(false);
+        
       })
       .catch(err => {
         console.log(err)
@@ -38,8 +42,11 @@ const MyTutorials = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-      {
-        tutorials.map(tutorial=><MyTutorialsRow key={tutorial._id} mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>)
+      
+      { loading ? (<div className="flex justify-center my-10">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>) :
+        (tutorials.map(tutorial=><MyTutorialsRow key={tutorial._id} mytutorial={mytutorial} setMytutorial={setMytutorial} tutorial={tutorial}></MyTutorialsRow>))
       }
       
       

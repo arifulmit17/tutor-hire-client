@@ -8,6 +8,7 @@ const FindTutors = () => {
     const {search,setSearch}=use(AuthContext)
     const [tutorialdata,setTutorialdata]=useState([])
     const [order, setOrder] = useState("asc");
+    const [loading, setLoading] = useState(true);
     // useEffect(()=>{
     //     fetch(`${import.meta.env.VITE_API_URL}/tutorials?searchParams=${search}`).then(res=>res.json()).then(data=>
     //         setTutorialdata(data)
@@ -20,9 +21,13 @@ const FindTutors = () => {
   //     .then((res) => setTutorialdata(res.data))
   // }, [order]);
      useEffect(() => {
+      setLoading(true);
     axios
       .get(`${import.meta.env.VITE_API_URL}/tutorials?order=${order}&search=${search}`)
-      .then((res) => setTutorialdata(res.data))
+      .then((res) => {setTutorialdata(res.data)
+        setLoading(false);
+      }
+    )
       .catch((err) => console.error("Fetch error:", err));
   }, [order,search]);
     
@@ -56,10 +61,19 @@ const FindTutors = () => {
   
             </select>
             </div>
+            {loading ? (
+    <div className="flex justify-center my-10">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  ) : (
+    tutorialdata.map(tutor => (
+      <TutorCard key={tutor._id} tutor={tutor} />
+    ))
+  )}
 
-{
+{/* {
             tutorialdata.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
-        }
+        } */}
         </div>
         
         

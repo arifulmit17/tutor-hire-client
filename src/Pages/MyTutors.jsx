@@ -6,9 +6,11 @@ import MyTutorsRows from '../Components/MyTutorsRows';
 const MyTutors = () => {
     const {user}=use(AuthContext)
     const [tutor,setTutor]=useState([])
+    const[loading,setLoading]=useState(true)
     console.log(tutor);
      const token=localStorage.getItem('token');
     useEffect(() => {
+      setLoading(true)
         axios(`${import.meta.env.VITE_API_URL}/mytutor/${user?.email}`,{
           headers: {
         Authorization: `Bearer ${token}`,
@@ -16,6 +18,7 @@ const MyTutors = () => {
         })
           .then(data => {
             setTutor(data?.data)
+            setLoading(false)
           })
           .catch(err => {
             console.log(err)
@@ -37,8 +40,10 @@ const MyTutors = () => {
     </thead>
     <tbody>
       {/* row 1 */}
-      {
-        tutor.map(tutor=><MyTutorsRows key={tutor._id}  tutor={tutor}></MyTutorsRows>)
+      { loading ? (<div className="flex justify-center items-center my-10">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>) :
+        (tutor.map(tutor=><MyTutorsRows key={tutor._id}  tutor={tutor}></MyTutorsRows>))
       }
       
       
