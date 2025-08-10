@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const MyTutorsRows = ({tutor}) => {
-    console.log(tutor);
     const [tutorial,setTutorial]=useState([])
     let review=tutorial.reviews
     if(review===null){

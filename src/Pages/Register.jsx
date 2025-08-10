@@ -92,14 +92,14 @@ const Register = () => {
 		
 	</div>
   <div className="flex items-center w-full my-4">
-		<hr  className="w-full dark:text-gray-600" />
-		<p className="px-3 dark:text-gray-600">OR</p>
-		<hr  className="w-full dark:text-gray-600" />
+		<hr  className="w-full dark:text-white" />
+		<p className="px-3 dark:text-white">OR</p>
+		<hr  className="w-full dark:text-white" />
 	</div>
               {/* Username */}
-               <input type="text" name='name' placeholder="Username " className="input w-full" />
+               <input type="text" name='name' placeholder="Username " className="input dark:text-white w-full" />
                {/* PhotoUrl */}
-               <input type="url" placeholder="https://"  name='photo' className="input w-full" />
+               <input type="url" placeholder="https://"  name='photo' className="input dark:text-white w-full" />
                {/* Email input */}
                <input name='email' type="email" placeholder="mail@site.com" required className="input w-full" />
                 {/* Password input  */}

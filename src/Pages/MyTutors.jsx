@@ -7,7 +7,6 @@ const MyTutors = () => {
     const {user}=use(AuthContext)
     const [tutor,setTutor]=useState([])
     const[loading,setLoading]=useState(true)
-    console.log(tutor);
      const token=localStorage.getItem('token');
     useEffect(() => {
       setLoading(true)

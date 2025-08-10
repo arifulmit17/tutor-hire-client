@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const TutorCard = ({tutor}) => {
-  console.log(tutor);
     const {_id,user,price, image, language, reviews, description}=tutor
     return (
         <div className="card card-side bg-secondary mx-auto w-11/12 lg:w-3/4 flex flex-col my-5 lg:flex-row shadow-sm">
