@@ -18,9 +18,9 @@ const Banner = () => {
         <Carousel showThumbs={false} infiniteLoop autoPlay>
       <div>
         <img className='h-[300px] lg:h-[400px] ' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727627/AP-English-Tutor-1-1_csstft.jpg" alt="Slide 1" />
-        <div className="w-2/3 lg:w-full h-full custom-text-overlay    border border-green-200">
+        <div className="w-2/3 lg:w-full h-full custom-text-overlay  ">
           
-          <div className='flex flex-col mt-80 items-center md:items-start lg:items-start'>
+          <div className='flex flex-col ml-20 md:ml-0 mt-80 items-center md:items-start lg:items-start'>
             <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
           <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
@@ -32,20 +32,24 @@ const Banner = () => {
       </div>
       <div >
         <img className='h-[300px] lg:h-[400px]' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727896/home-tutor-Singapore_rf0da5.jpg" alt="Slide 2" />
-        <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
-          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+        <div className="w-2/3 lg:w-full h-full custom-text-overlay  relative">
+          <div className='flex flex-col ml-20 md:ml-0 mt-80 items-center md:items-start lg:items-start'>
+            <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
           <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
           </Link>
+          </div>
         </div>
       </div>
       <div>
         <img className='h-[300px] lg:h-[400px]' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727901/istockphoto-1409994740-612x612_pekpmf.jpg" alt="Slide 3" />
-        <div className="custom-text-overlay flex flex-col ml-10 items-center md:items-center lg:items-start relative">
-          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+        <div className="w-2/3 lg:w-full h-full custom-text-overlay  relative">
+          <div className='flex flex-col ml-20 md:ml-0 mt-80 items-center md:items-start lg:items-start'>
+            <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
           <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
           </Link>
+          </div>
         </div>
       </div>
     </Carousel>

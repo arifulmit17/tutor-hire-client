@@ -136,9 +136,9 @@ const Home = () => {
                 <h1 className='font-bold text-5xl text-center my-10'>Members Only</h1>
                 <div  className='w-11/12 mx-auto lg:flex'>
                 <div className='w-5/12  '>
-                    <img className='md:w-[300px] ml-30 rounded-2xl' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754746986/member_xfbqff.png" alt="" />
+                    <img className='md:w-[300px] ml-30 md:ml-55 lg:ml-0 rounded-2xl' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754746986/member_xfbqff.png" alt="" />
                 </div>
-                <div className='w-full lg:w-7/12 mx-5 mb-5'>
+                <div className='w-full lg:w-7/12 mx-5 mb-5 flex flex-col lg:items-start items-center'>
                     <h1 className='text-lg md:text-xl lg:text-2xl font-semibold'>Member's Benefit</h1>
                     <p className='text-base md:text-lg lg:text-xl '>Our site focuses on a platform for teaching enthusiasts for following benefits</p>
                     <ol className='h-1/2 mt-3 flex flex-col justify-between'>
@@ -149,7 +149,7 @@ const Home = () => {
                       <li>3. Connect over shared interests in languages</li>
                     </ol>
                     <NavLink to={'/register'}>
-                     <button className='text-white ml-15 lg:ml-40 rounded-2xl btn btn-primary btn-wide'>Register Now</button>
+                     <button className='text-white lg:ml-40 rounded-2xl btn btn-primary btn-wide'>Register Now</button>
                      </NavLink>
                 </div>
             </div>
