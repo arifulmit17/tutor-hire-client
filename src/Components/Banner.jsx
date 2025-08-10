@@ -18,11 +18,15 @@ const Banner = () => {
         <Carousel showThumbs={false} infiniteLoop autoPlay>
       <div>
         <img className='h-[300px] lg:h-[400px] ' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727627/AP-English-Tutor-1-1_csstft.jpg" alt="Slide 1" />
-        <div className="custom-text-overlay flex flex-col mx-50 mt-40 justify-center items-center md:items-center lg:items-start relative">
-          <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
+        <div className="w-2/3 lg:w-full h-full custom-text-overlay    border border-green-200">
+          
+          <div className='flex flex-col mt-80 items-center md:items-start lg:items-start'>
+            <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
           <Link to={'/register'}>
           <button className='btn btn-primary'>Hire now</button>
           </Link>
+          </div>
+          
           
         </div>
       </div>

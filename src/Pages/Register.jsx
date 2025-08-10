@@ -116,7 +116,7 @@ const Register = () => {
               
         {/* Submit */}
         <br />
-        <button type='submit' className='btn text-white w-full bg-gray-400'>Submit</button>
+        <button type='submit' className='btn btn-primary text-white w-full'>Submit</button>
             </form>
         <h1 className='text-center '>Already registered, go to <NavLink to={'/login'} className={'font-bold hover:underline'}> login page</NavLink></h1>
         </div>

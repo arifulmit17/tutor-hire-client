@@ -11,7 +11,7 @@ const Featured_tutorCard = ({tutor}) => {
      alt="Tutor/Tutorial" />
   </figure>
   <div className="card-body w-full ">
-    <h2 className="card-title">Name : {user}</h2>
+    <h2 className="card-title">Teacher : {user}</h2>
     <p><span className='font-bold'>Language:</span> {language}</p>
     <p><span className='font-bold'>Price:</span>  {price}</p>
    <div className="card-actions justify-end">

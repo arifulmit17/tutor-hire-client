@@ -79,7 +79,7 @@ const Home = () => {
                     </NavLink>
                     <NavLink to={'/findtutors'}>
                         <div onClick={()=>handleclick('portuguese')} className='flex h-12 items-center justify-around border-2'>
-                    <img className='w-10' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727894/download_g2rkci.jpg" alt="english" />
+                    <img className='w-10' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754807174/images_4_di1bpz.jpg" alt="english" />
                     <h1>Portuguese language</h1>
                     <MdArrowForwardIos />
                          </div>
