@@ -42,7 +42,7 @@ const Banner = () => {
         </div>
       </div>
       <div>
-        <img className='h-[300px] lg:h-[400px]' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754727901/istockphoto-1409994740-612x612_pekpmf.jpg" alt="Slide 3" />
+        <img className='h-[300px] lg:h-[400px]' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754829982/a-z-tutoring_c88qly.jpg" alt="Slide 3" />
         <div className="w-2/3 lg:w-full h-full custom-text-overlay  relative">
           <div className='flex flex-col ml-20 md:ml-0 mt-80 items-center lg:ml-5 md:items-start lg:items-start'>
             <h2 className="text-white text-4xl mb-3 font-bold">Hire tutor now</h2>
