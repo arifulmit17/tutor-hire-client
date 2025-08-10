@@ -159,9 +159,9 @@ const Home = () => {
                 <h1 className='font-bold text-5xl text-center my-10'>Promotional Offer</h1>
                 <div className='flex flex-col md:flex-row lg:flex-row'>
                     <div className='flex-1'>
-                        <img className='h-[300px] w-full' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754746990/pngtree-50-off-blue-text-with-white-circle-background-png-image_6323823_djseqb.png" alt="" />
+                        <img className='h-[200px] lg:h-[300px] w-full' src="https://res.cloudinary.com/dfhlm4cyw/image/upload/v1754746990/pngtree-50-off-blue-text-with-white-circle-background-png-image_6323823_djseqb.png" alt="" />
                     </div>
-                    <div className='flex-1 h-[300px] flex flex-col items-center justify-center bg-primary'>
+                    <div className='flex-1 h-[200px] lg:h-[300px] flex flex-col items-center justify-center bg-primary'>
                         <h1 className='text-4xl'>
                             Have 50% off this july
                         </h1>
