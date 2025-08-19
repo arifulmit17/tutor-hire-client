@@ -1,6 +1,6 @@
 Project Name: Tutor hire
 
-Generated Live Site URL: https://b11a11tutor-hire-client.netlify.app/
+Generated Live Site URL: https://tutor-hire-online.netlify.app/
 
 Guidance: Browse to the live site link and follow the f.a.q section in home page. for server info go the server repo link provided below.
 
